@@ -5,10 +5,8 @@ import uk.co.willanthony.model.Vet;
 
 import java.util.Set;
 
-public interface VetService {
+public interface VetService extends CrudService<Vet, Long> {
 
     Vet findByLastName(String lastName);
-    Vet findById(Long ig);
-    Vet save(Vet Vet);
-    Set<Vet> findAll();
+
 }
