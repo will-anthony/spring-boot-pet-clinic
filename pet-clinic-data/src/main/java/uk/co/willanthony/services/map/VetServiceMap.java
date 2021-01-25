@@ -1,12 +1,13 @@
 package uk.co.willanthony.services.map;
 
-import uk.co.willanthony.model.Owner;
+import org.springframework.stereotype.Service;
 import uk.co.willanthony.model.Vet;
-import uk.co.willanthony.services.CrudService;
+import uk.co.willanthony.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
@@ -31,5 +32,10 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Vet findByLastName(String lastName) {
+        return null;
     }
 }
